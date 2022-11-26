@@ -10,8 +10,8 @@ def main():
     for i in range(5):
         caves = make_caves(
             size=size,
-            num_rooms=9,
-            num_corridors=12,
+            num_rooms=7,
+            num_corridors=9,
             room_min_steps=30,
             room_max_steps=80,
             room_iterations=30,

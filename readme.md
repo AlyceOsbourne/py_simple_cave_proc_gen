@@ -77,6 +77,7 @@ drunkards walk can go
 
 
 ###What does it look like?
+
 ![cave_0](examples/cave_0.png)
 
 ![cave_1](examples/cave_1.png)
