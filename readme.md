@@ -20,6 +20,7 @@ from cave_carver import make_caves
 
 caves = make_caves(
     size=(120, 120),
+    max_attempts=3,
     num_rooms=7,
     num_corridors=9,
     room_min_steps=30,
@@ -30,16 +31,48 @@ caves = make_caves(
     corridor_max_staps=10,
     corridor_max_distance_from_start=6,
     border_padding=20,
+    min_room_distance=20,
     carvable_values=[0, 1],
     passable_values=[1],
     carve_value=1,
-    heuristic_methods=['euclidean', 'octile', 'manhattan', 'chebyshev'],
-    max_attempts=100,
-    min_room_distance=20
+    heuristic_methods=[
+        'euclidean', 
+        'octile', 
+        'manhattan', 
+        'chebyshev'
+    ],
 )
 ```
-This will retry the defined number of times if it is not able to validate the map.It shouldn't need to retry too many 
-if your settings are relatively balanced  
+
+`size`: Size of the map grid
+
+`max_attemps`: How many times it will try and generate a cave system with these settings
+
+`num_rooms`: number of large cave will be generated
+
+`num_corridors`: number of connecting corridors
+
+`room_min_steps` and `room_max_steps`: the range of steps that will be taken by the drunkards walk for the rooms
+
+`room_iterations`: number of times to run drunkards walk per room
+
+`room_max_distance_from_start`: only useful for larger maps, use to control how far from the starting point 
+drunkards walk can go
+
+`corridor_min_steps`, `corridor_max_steps` and `corridor_max_distance_from_start`: Same as the room variants, but for corridors
+
+`border_padding`: padding from edge for the center of the rooms
+
+`min_room_distance`: minimum distance between rooms
+
+`carve_value`: the value that carved caves will yield
+
+`carvable_values`: the values allowed to be carved
+
+`passable_values`: used for validating the map
+
+`heuristics_methods`: a list or heuristic function names that will be used for corridor generation, namely
+`'euclidean'`, `'octile'`, `'manhattan'` and `'chebyshev'`
 
 
 

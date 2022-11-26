@@ -83,4 +83,4 @@ def a_star(*, grid: np.array, start: tuple[int, int], goal: tuple[int, int], pas
             if neighbor in open_list:
                 continue
             open_list.add(neighbor)
-    return None
+    return []

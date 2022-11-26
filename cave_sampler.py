@@ -1,8 +1,7 @@
-# takes a numpy array of ints and draps thew map as a png file using pygame, drawing each value as a square
-import pygame;
+import pygame
+from cave_carver import make_caves
 
 pygame.init()
-from cave_carver import make_caves
 
 
 def main():
@@ -21,7 +20,7 @@ def main():
             corridor_max_staps=10,
             corridor_max_distance_from_start=6,
             border_padding=20,
-            carvable_values=[0, 1],
+            carvable_values=[0],
             passable_values=[1],
             carve_value=1,
             heuristic_methods=['euclidean', 'octile', 'manhattan', 'chebyshev'],
