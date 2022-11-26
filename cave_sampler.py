@@ -11,14 +11,14 @@ def main():
     for i in range(5):
         caves = make_caves(
             size=size,
-            num_rooms=7,
-            num_corridors=9,
+            num_rooms=9,
+            num_corridors=12,
             room_min_steps=30,
-            room_max_steps=70,
+            room_max_steps=80,
             room_iterations=30,
             room_max_distance_from_start=None,
             corridor_min_steps=3,
-            corridor_max_staps=5,
+            corridor_max_staps=10,
             corridor_max_distance_from_start=6,
             border_padding=20,
             carvable_values=[0, 1],
@@ -26,7 +26,7 @@ def main():
             carve_value=1,
             heuristic_methods=['euclidean', 'octile', 'manhattan', 'chebyshev'],
             max_attempts=100,
-            min_room_distance=15
+            min_room_distance=20
         )
         if caves is None:
             print("Failed to generate cave")

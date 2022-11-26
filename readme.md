@@ -8,7 +8,7 @@ The steps are as follows:
 - create the map grid
 - create a number of random starting points for the larger caves
 - iteratively use drunkards walk to create the larger caves at the starting points
-- use A* to connect the larger caves, using drunkards walk at eeach step of the path, 
+- use A* to connect the larger caves, using drunkards walk at each step of the path, 
 using random heuristic functions from a list to increase variation
 - validates that all starting points are connected, this makes sure that the whole system is connected
 if this fails recursively generate a new map, this is fast and fairly cheap
@@ -19,29 +19,29 @@ if this fails recursively generate a new map, this is fast and fairly cheap
 from cave_carver import make_caves
 
 caves = make_caves(
-    size=(120, 120),                    # the width and height of the map
-    max_attempts=100,                   # the maximum number of attempts to generate a map
-    num_rooms=7,                        # the number of larger caves to generate
-    num_corridors=9,                    # the number of corridors to generate
-    room_min_steps=30,                  # the minimum number of steps for drunkards walk to take
-    room_max_steps=70,                  # the maximum number of steps for drunkards walk to take
-    room_iterations=30,                 # the number of times to run drunkards walk for each room
-    room_max_distance_from_start=None,  # the maximum distance from the starting point for drunkards walk to take
-    corridor_min_steps=3,               # the minimum number of steps for drunkards walk to take for corridors
-    corridor_max_staps=5,               # the maximum number of steps for drunkards walk to take for corridors
-    corridor_max_distance_from_start=6, # the maximum distance from the starting point for drunkards walk to take for corridors
-    border_padding=20,                  # the padding around the edge of the map
-    min_room_distance=15,               # the minimum distance between rooms
-    carvable_values=[0, 1],             # the values that can be carved
-    passable_values=[1],                # the values that are passable, used to validate the map
-    carve_value=1,                      # the value carving will use
-    heuristic_methods=[                 # the heuristic methods to use for A*
-    'euclidean', 
-    'octile', 
-    'manhattan', 
-    'chebyshev'], 
+    size=(120, 120),
+    num_rooms=7,
+    num_corridors=9,
+    room_min_steps=30,
+    room_max_steps=80,
+    room_iterations=30,
+    room_max_distance_from_start=None,
+    corridor_min_steps=3,
+    corridor_max_staps=10,
+    corridor_max_distance_from_start=6,
+    border_padding=20,
+    carvable_values=[0, 1],
+    passable_values=[1],
+    carve_value=1,
+    heuristic_methods=['euclidean', 'octile', 'manhattan', 'chebyshev'],
+    max_attempts=100,
+    min_room_distance=20
 )
 ```
+This will retry the defined number of times if it is not able to validate the map.It shouldn't need to retry too many 
+if your settings are relatively balanced  
+
+
 
 ###What does it look like?
 ![cave_0](examples/cave_0.png)

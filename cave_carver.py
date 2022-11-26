@@ -29,6 +29,7 @@ def make_caves(
         max_attempts: int,
         min_room_distance: int
 ):
+
     if num_corridors < num_rooms - 1:
         raise ValueError("Not enough corridors to connect all the rooms")
     if (min_room_distance + border_padding) / 2 > min(size):
