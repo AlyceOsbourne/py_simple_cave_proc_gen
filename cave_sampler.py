@@ -1,5 +1,7 @@
 # takes a numpy array of ints and draps thew map as a png file using pygame, drawing each value as a square
-import pygame; pygame.init()
+import pygame;
+
+pygame.init()
 from cave_carver import make_caves
 
 

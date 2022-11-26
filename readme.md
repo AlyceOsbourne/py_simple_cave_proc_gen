@@ -44,12 +44,12 @@ caves = make_caves(
 ```
 
 ###What does it look like?
-![cave_0](/examples/cave_0.png)
+![cave_0](examples/cave_0.png)
 
-![cave_1](/examples/cave_1.png)
+![cave_1](examples/cave_1.png)
 
-![cave_2](/examples/cave_2.png)
+![cave_2](examples/cave_2.png)
 
-![cave_3](/examples/cave_3.png)
+![cave_3](examples/cave_3.png)
 
-![cave_4](/examples/cave_4.png)
+![cave_4](examples/cave_4.png)
